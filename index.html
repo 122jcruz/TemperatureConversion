@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="container-flud">
+      <h1>Converter</h1>
+      <br />
+      <div class="row">
+        <!--Farenheit Conversions-->
+        <div class="col-4">
+          <h2>Fahrenheit Conversions</h2>
+          <h3>Fahrenheit to Celsius</h3>
+          <div class="col-3 m-auto">
+            <input type="number" id="inputNum1" class="form-control" />
+          </div>
+          <div class="col-2 m-auto">
+            <button
+              type="button"
+              class="btn btn-outline-dark"
+              onclick="fahrenheitConverter()"
+            >
+              <h2>=</h2>
+            </button>
+          </div>
+          <div class="col-2">
+            <h2 id="result1">?</h2>
+          </div>
+
+          <h3>Fahrenheit to Kelvin</h3>
+          <div class="col-3 m-auto">
+            <input type="number" id="inputNum2" class="form-control" />
+          </div>
+          <div class="col-2 m-auto">
+            <button
+              type="button"
+              class="btn btn-outline-dark"
+              onclick="fahrenheitConverterKelvin()"
+            >
+              <h2>=</h2>
+            </button>
+          </div>
+          <div class="col-2">
+            <h2 id="result2">?</h2>
+          </div>
+        </div>
+
+        <!--Kevin Conversions-->
+        <div class="col-4">
+          <h2>Kelvin Conversions</h2>
+          <h3>Kelvin to Celsius</h3>
+          <div class="col-3 m-auto">
+            <input type="number" id="inputNum3" class="form-control" />
+          </div>
+          <div class="col-2 m-auto">
+            <button
+              type="button"
+              class="btn btn-outline-dark"
+              onclick="kelvinConverter()"
+            >
+              <h2>=</h2>
+            </button>
+          </div>
+          <div class="col-2">
+            <h2 id="result3">?</h2>
+          </div>
+
+          <h3>Kevin to Fahrenheit</h3>
+          <div class="col-3 m-auto">
+            <input type="number" id="inputNum4" class="form-control" />
+          </div>
+          <div class="col-2 m-auto">
+            <button
+              type="button"
+              class="btn btn-outline-dark"
+              onclick="kelvinConverterFarenheit()"
+            >
+              <h2>=</h2>
+            </button>
+          </div>
+          <div class="col-2">
+            <h2 id="result4">?</h2>
+          </div>
+        </div>
+
+        <!--Celsius Conversions-->
+        <div class="col-4">
+          <h2>Celsius Conversions</h2>
+          <h3>Celsius to Kelvin</h3>
+          <div class="col-3 m-auto">
+            <input type="number" id="inputNum5" class="form-control" />
+          </div>
+          <div class="col-2 m-auto">
+            <button
+              type="button"
+              class="btn btn-outline-dark"
+              onclick="celsiusConverter()"
+            >
+              <h2>=</h2>
+            </button>
+          </div>
+          <div class="col-2">
+            <h2 id="result5">?</h2>
+          </div>
+
+          <h3>Kevin to Fahrenheit</h3>
+          <div class="col-3 m-auto">
+            <input type="number" id="inputNum6" class="form-control" />
+          </div>
+          <div class="col-2 m-auto">
+            <button
+              type="button"
+              class="btn btn-outline-dark"
+              onclick="celsiusConverterFarenheit()"
+            >
+              <h2>=</h2>
+            </button>
+          </div>
+          <div class="col-2">
+            <h2 id="result6">?</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // farenheit conversions
+      function fahrenheitConverter() {
+        num1 = document.getElementById("inputNum1").value;
+        result1 = (num1 - 32) / 1.8;
+
+        document.getElementById("result1").innerHTML = result1;
+      }
+      function fahrenheitConverterKelvin() {
+        num2 = document.getElementById("inputNum2").value;
+        result2 = (num2 - 32) / 1.8 + 273.15;
+
+        document.getElementById("result2").innerHTML = result2;
+      }
+      //kelvin conversions
+      function kevinConverter() {
+        num3 = document.getElementById("inputNum3").value;
+        result3 = num3 - 273.15;
+
+        document.getElementById("result3").innerHTML = result3;
+      }
+      function kelvinConverterFarenheit() {
+        num4 = document.getElementById("inputNum4").value;
+        result4 = (num4 - 273.15) * 1.8 + 32;
+
+        document.getElementById("result4").innerHTML = result4;
+      }
+      //celsius conversions
+      function celsiusConverter() {
+        num5 = document.getElementById("inputNum5").value;
+
+        result5 = num5 + 273.15;
+
+        document.getElementById("result5").innerHTML = result5;
+      }
+      function celsiusConverterFarenheit() {
+        num6 = document.getElementById("inputNum6").value;
+
+        result6 = num6 * 1.8 + 32;
+
+        document.getElementById("result6").innerHTML = result6;
+      }
+    </script>
+  </body>
+</html>
